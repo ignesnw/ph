@@ -45,7 +45,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #f5efe6;
+  --background: #fff;
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -176,6 +176,16 @@
 
 [data-slot="sidebar"] .sidebar-header-icon {
   display: none;
+}
+
+[data-slot="sidebar"] .sidebar-trigger-collapsed-wrapper {
+  display: none;
+}
+[data-slot="sidebar"][data-state="collapsed"] .sidebar-trigger-collapsed-wrapper {
+  display: flex;
+}
+[data-slot="sidebar"][data-state="collapsed"] .sidebar-trigger-expanded {
+  display: none !important;
 }
 
 @layer base {

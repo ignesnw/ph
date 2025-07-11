@@ -49,7 +49,12 @@ export default function RootLayout({
               <div className="pr-2 py-2 font-bold text-lg flex items-center gap-0">
                 <span className="sidebar-logo-placeholder">P</span>
                 <span className="sidebar-header-full">PlanHub</span>
-                <SidebarTrigger className="sidebar-trigger-collapsible hidden md:inline-flex ml-auto" />
+                {/* Hamburger for expanded state */}
+                <SidebarTrigger className="sidebar-trigger-collapsible hidden md:inline-flex ml-auto sidebar-trigger-expanded" />
+              </div>
+              {/* Hamburger for collapsed state (below logo) */}
+              <div className="flex flex-col items-center mt-2 sidebar-trigger-collapsed-wrapper">
+                <SidebarTrigger className="sidebar-trigger-collapsed" />
               </div>
             </SidebarHeader>
 
@@ -114,7 +119,7 @@ export default function RootLayout({
           </Sidebar>
 
           {/* Main content area */}
-          <main className="flex-1 p-6">{children}</main>
+          <main className="flex-1">{children}</main>
         </SidebarProvider>
       </body>
     </html>
